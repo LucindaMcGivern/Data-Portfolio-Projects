@@ -34,7 +34,7 @@ pagetitle = content1read.find(id='productTitle').get_text()
 #too much whitespace
 productname = pagetitle.strip()
 
-print(productname)
+#print(productname)
 
 
 # In[60]:
@@ -45,7 +45,7 @@ pageprice = content1read.find(id='tp_price_block_total_price_ww').get_text()
 clean_price = pageprice.strip()
 productprice = clean_price.split(' ', 1)[0]
 
-print(productprice)
+#print(productprice)
 
 
 # In[81]:
@@ -56,7 +56,7 @@ import datetime
 
 record = datetime.date.today()
 
-print(record)
+#print(record)
 
 
 # In[82]:
@@ -88,7 +88,7 @@ with open('amzscrape.csv', 'a+', newline='', encoding='UTF8') as m:
 
 # In[87]:
 
-
+#turn it into a function
 def amzpricecheck():
     # tell BeautifulSoup, requests where to get data
     amz = 'https://www.amazon.ca/Corgis-Monthly-Calendar-Bright-Day/dp/B0BQ3ZKL25/ref=sr_1_8?crid=Z6CLQ5CE3915&keywords=corgi&qid=1701229444&sprefix=corgi%2Caps%2C167&sr=8-8'
@@ -134,7 +134,7 @@ def amzpricecheck():
 
 # In[88]:
 
-
+#run function every half day
 import time
 while(True):
     amzpricecheck()
